@@ -5,11 +5,11 @@ import InputBox from "@repo/ui/inputBox";
 import { signIn } from "next-auth/react";
 import { redirect, useRouter } from "next/navigation";
 import { useEffect, useState, useTransition } from "react";
-import { checkUser } from "../../../actions/auth/checkUser";
+import { checkUser } from "../../actions/auth/checkUser";
 import { ConfirmationResult, getAuth , RecaptchaVerifier, signInWithPhoneNumber  } from "firebase/auth";
 
 
-import { signup } from "../../../actions/auth/signup";
+import { signup } from "../../actions/auth/signup";
 
 import { app } from "../../lib/firebase/auth";
 import { log } from "console";

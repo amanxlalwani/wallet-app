@@ -3,10 +3,10 @@ import { Button } from "@repo/ui/button"
 import { Card } from "@repo/ui/card"
 import InputBox from "@repo/ui/inputBox"
 import { useEffect, useState } from "react"
-import { searchUser } from "../../../actions/P2P/searchUser"
+import { searchUser } from "../../actions/P2P/searchUser"
 import { clearInterval } from "timers"
 import { log } from "console"
-import { sendMoney } from "../../../actions/P2P/sendMoney"
+import { sendMoney } from "../../actions/P2P/sendMoney"
 import { toast } from "react-toastify"
 
 
@@ -39,7 +39,10 @@ export default function P2PTransfer(){
         } placeholder="+919876543211"></InputBox>
         <div className={` max-h-40 overflow-y-auto bg-slate-200 rounded-lg ${autoComplete?"hidden":""}`}>
         {users.length?<div>
-            {users.map(user=>{
+            {users.map((user: {
+    phone: string;
+    name: string | null;
+})=>{
                 return <div onClick={()=>{setNumber(user.phone); setAutoComplete(true)}} className="flex items-center justify-between cursor-pointer border-b border-slate-100  p-4">
                     <div className="font-medium text-lg">{user.name}</div>
                     <div className="text-slate-800" >{user.phone}</div> 

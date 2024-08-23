@@ -3,7 +3,7 @@
 import prisma from "@repo/db/client"
 import { getServerSession } from "next-auth"
 import { use } from "react"
-import { authOptions } from "../../app/lib/nextAuth/auth"
+import { authOptions } from "../../lib/nextAuth/auth"
 import { log } from "console"
 
 export async function searchUser(searchNumber:string){
@@ -20,10 +20,20 @@ export async function searchUser(searchNumber:string){
         }
     })
     console.log(users);
-    const finalUsers= users.filter(user=>{
+    const finalUsers= users.filter((user:{
+        id: number;
+        name: string | null;
+        number: string;
+        password: string;
+    })=>{
         return user.id!=session.user.id
     })
-    return finalUsers.map(user=>{    
+    return finalUsers.map((user:{
+        id: number;
+        name: string | null;
+        number: string;
+        password: string;
+    })=>{    
         return {phone:user.number,name:user.name}
     })
   
