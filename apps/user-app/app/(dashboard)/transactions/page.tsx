@@ -29,7 +29,10 @@ export default async function Transactions(){
     <Card title="Transactions">
         <div className="flex flex-col ">
             
-            {history.map(ele=>{
+            {history.map((ele:{type: string;
+    otherPerson: string;
+    otherNumber: string;
+    amount: number;})=>{
                 return <>
                  <div className="flex justify-between items-center">
                  <div className="flex flex-col items-center justify-between border-b border-slate-100  p-4">
