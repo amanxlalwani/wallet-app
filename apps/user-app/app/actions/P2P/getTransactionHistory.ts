@@ -40,20 +40,8 @@ export async function getTransactionHistory(){
         )
 
 
-        
-        const history=res.map((ele:{
-            amount: number;
-            sender: {
-                number: string;
-                id: number;
-                name: string | null;
-            };
-            receiver: {
-                number: string;
-                id: number;
-                name: string | null;
-            };
-        })=>{
+
+        const history=res.map((ele:any)=>{
            let type="credit"
            let otherPerson=ele.sender.name 
            let otherNumber=ele.sender.number
