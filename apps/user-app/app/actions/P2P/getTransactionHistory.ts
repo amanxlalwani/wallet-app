@@ -39,6 +39,8 @@ export async function getTransactionHistory(){
             }
         )
 
+
+        
         const history=res.map((ele:{
             amount: number;
             sender: {
