@@ -33,11 +33,17 @@ export default  function AddMoneyCard(){
         }} title="Amount" placeholder="Amount" type="number"></InputBox>
         </div>
         <div className="mt-4">
-        <Select title={"Bank"} options={BANK_OPTIONS.map((ele)=>{
+        <Select title={"Bank"} options={BANK_OPTIONS.map((ele: {
+    name: string;
+    redirectUrl: string;
+})=>{
         return {key:ele.name,value:ele.name}
         })}
         onSelect={(value)=>{
-            const BANK_OPTION=BANK_OPTIONS.find((ele)=>{return ele.name === value})
+            const BANK_OPTION=BANK_OPTIONS.find((ele: {
+                name: string;
+                redirectUrl: string;
+            })=>{return ele.name === value})
             setRedirectUrl(BANK_OPTION?.redirectUrl || "")
             setBankName(BANK_OPTION?.name || "")
         }} ></Select>
