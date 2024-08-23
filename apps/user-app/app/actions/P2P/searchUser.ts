@@ -3,7 +3,7 @@
 import prisma from "@repo/db/client"
 import { getServerSession } from "next-auth"
 import { use } from "react"
-import { authOptions } from "../../app/lib/nextAuth/auth"
+import { authOptions } from "../../lib/nextAuth/auth"
 import { log } from "console"
 
 export async function searchUser(searchNumber:string){

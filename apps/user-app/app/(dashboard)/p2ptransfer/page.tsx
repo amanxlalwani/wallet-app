@@ -3,10 +3,10 @@ import { Button } from "@repo/ui/button"
 import { Card } from "@repo/ui/card"
 import InputBox from "@repo/ui/inputBox"
 import { useEffect, useState } from "react"
-import { searchUser } from "../../../actions/P2P/searchUser"
+import { searchUser } from "../../actions/P2P/searchUser"
 import { clearInterval } from "timers"
 import { log } from "console"
-import { sendMoney } from "../../../actions/P2P/sendMoney"
+import { sendMoney } from "../../actions/P2P/sendMoney"
 import { toast } from "react-toastify"
 
 

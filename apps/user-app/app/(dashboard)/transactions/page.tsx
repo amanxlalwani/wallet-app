@@ -1,5 +1,5 @@
 import { Card } from "@repo/ui/card"
-import { getTransactionHistory } from "../../../actions/P2P/getTransactionHistory"
+import { getTransactionHistory } from "../../actions/P2P/getTransactionHistory"
 import { log } from "console"
 
 

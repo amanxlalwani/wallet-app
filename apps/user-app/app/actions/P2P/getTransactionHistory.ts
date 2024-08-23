@@ -2,7 +2,7 @@
 
 import prisma from "@repo/db/client"
 import { getServerSession } from "next-auth"
-import { authOptions } from "../../app/lib/nextAuth/auth"
+import { authOptions } from "../../lib/nextAuth/auth"
 import { log } from "console"
 
 
@@ -39,7 +39,7 @@ export async function getTransactionHistory(){
             }
         )
 
-        const history=res.map(ele=>{
+        const history=res.map((ele)=>{
            let type="credit"
            let otherPerson=ele.sender.name 
            let otherNumber=ele.sender.number
@@ -61,8 +61,6 @@ export async function getTransactionHistory(){
     }
     catch(e){
         console.log(e);
-        return []
-    
-        
+        return []     
     }
 }

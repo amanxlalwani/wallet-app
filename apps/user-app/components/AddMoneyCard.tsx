@@ -5,7 +5,7 @@ import { Card } from "@repo/ui/card";
 import InputBox from "@repo/ui/inputBox";
 import Select from "@repo/ui/select"
 import { useState } from "react";
-import { initiateOnRamp } from "../actions/OnRamp/initiateTransfer";
+import { initiateOnRamp } from "../app/actions/OnRamp/initiateTransfer";
 
 import { getSession, useSession } from "next-auth/react";
 import { log } from "console";
