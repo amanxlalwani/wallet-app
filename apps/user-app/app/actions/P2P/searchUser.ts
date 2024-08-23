@@ -20,10 +20,20 @@ export async function searchUser(searchNumber:string){
         }
     })
     console.log(users);
-    const finalUsers= users.filter(user=>{
+    const finalUsers= users.filter((user:{
+        id: number;
+        name: string | null;
+        number: string;
+        password: string;
+    })=>{
         return user.id!=session.user.id
     })
-    return finalUsers.map(user=>{    
+    return finalUsers.map((user:{
+        id: number;
+        name: string | null;
+        number: string;
+        password: string;
+    })=>{    
         return {phone:user.number,name:user.name}
     })
   

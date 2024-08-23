@@ -30,7 +30,7 @@ export default async function Transactions(){
         <div className="flex flex-col ">
             
             {history.map((ele:{type: string;
-    otherPerson: string;
+    otherPerson: string|null;
     otherNumber: string;
     amount: number;})=>{
                 return <>
