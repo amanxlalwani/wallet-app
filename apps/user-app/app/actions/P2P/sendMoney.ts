@@ -1,7 +1,7 @@
 'use server'
 import prisma from "@repo/db/client";
 import { getServerSession } from "next-auth";
-import { authOptions } from "../../app/lib/nextAuth/auth";
+import { authOptions } from "../../lib/nextAuth/auth";
 
 export async function sendMoney(phone:string,money:number){
     const session=await getServerSession(authOptions)
