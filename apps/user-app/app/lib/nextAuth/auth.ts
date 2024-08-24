@@ -44,7 +44,7 @@ export const authOptions=
             }
             }),
         ],
-        secret:process.env.NEXT_PUBLIC_SECRET ,
+        secret:process.env.NEXT_PUBLIC_SECRET || "secret" ,
         callbacks:{
             async session({token,session}:any){
                session.user.id=token.sub
