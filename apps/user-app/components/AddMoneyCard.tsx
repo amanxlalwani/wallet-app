@@ -36,8 +36,11 @@ export default  function AddMoneyCard(){
         <Select title={"Bank"} options={BANK_OPTIONS.map((ele)=>{
         return {key:ele.name,value:ele.name}
         })}
-        onSelect={(value)=>{
-            const BANK_OPTION=BANK_OPTIONS.find((ele)=>{return ele.name === value})
+        onSelect={(value:string)=>{
+            const BANK_OPTION=BANK_OPTIONS.find((ele: {
+                name: string;
+                redirectUrl: string;
+            })=>{return ele.name === value})
             setRedirectUrl(BANK_OPTION?.redirectUrl || "")
             setBankName(BANK_OPTION?.name || "")
         }} ></Select>
