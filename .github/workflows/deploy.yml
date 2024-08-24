@@ -42,4 +42,4 @@ jobs:
           sudo docker pull amanlalwani/wallet-app:latest
           sudo docker stop web-app || true
           sudo docker rm web-app || true
-          sudo docker run -d --name web-app -p 3005:3000 amanlalwani/wallet-app:latest
+          sudo docker run -d --name web-app -e NEXT_SECRET='${{secrets.NEXT_SECRET}}'   -p 3005:3000 amanlalwani/wallet-app:latest
