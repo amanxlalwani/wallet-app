@@ -10,6 +10,10 @@ import { toast } from "react-toastify";
 
 
 export default function SignIn(){
+    console.log("aaaa"+process.env.NEXT_PUBLIC_SECRET);
+    console.log("bbbb"+process.env.JWT_SECRET);
+    
+    
     const [user,setUser]=useState<{phone:string,password:string}>({phone:"",password:""})
     const router = useRouter()
     const [isPending,startTransition]=useTransition()
