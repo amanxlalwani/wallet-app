@@ -37,6 +37,7 @@ export default  function AddMoneyCard(){
         return {key:ele.name,value:ele.name}
         })}
         onSelect={(value:string)=>{
+            
             const BANK_OPTION=BANK_OPTIONS.find((ele: {
                 name: string;
                 redirectUrl: string;
