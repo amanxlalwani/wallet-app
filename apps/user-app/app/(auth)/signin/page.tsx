@@ -10,7 +10,8 @@ import { toast } from "react-toastify";
 
 
 export default function SignIn(){
-    console.log("aaaa"+process.env.NEXT_PUBLIC_SECRET);
+    console.log("aaaa");
+    console.log(process.env.NEXT_PUBLIC_SECRET);
     console.log("bbbb"+process.env.JWT_SECRET);
     
     
