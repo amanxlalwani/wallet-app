@@ -8,6 +8,7 @@ export async function checkUser({user:{name,phone,password}}:{user:{name:string,
 
     try{
          
+        
         const res1=  await prisma.user.findFirst({where:{number:phone}})
       
         if(res1){
