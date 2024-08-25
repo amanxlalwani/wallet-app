@@ -18,7 +18,9 @@ import { toast } from "react-toastify";
 
 export default function SignUp(){
   const router = useRouter()
-
+  console.log("aaa"+process.env.NEXT_PUBLIC_SECRET);
+  console.log("bbbb"+process.env.NEXTAUTH_URL);
+  
     const[otp,setOtp]=useState("")
     const [recaptchaVerifier,setRecaptchaVerifier]=useState<RecaptchaVerifier|null>(null)
     const [resendCountdown,setResendCountdown]=useState(0)
@@ -26,10 +28,7 @@ export default function SignUp(){
     const [user,setUser]=useState<{name:string, phone:string,password:string}>({name:"",phone:"",password:""})
     const[isPending,startTransition]=useTransition()
     const auth=getAuth(app)
-     console.log(process.env.NEXT_PUBLIC_SECRET+"aaa");
-    
-     console.log(process.env.NEXT_SECRET+"ccc");
-     console.log("bbbb"+process.env.NEXTAUTH_URL);
+
           
     const loadingIndicator=(<div>
       <div role="status">

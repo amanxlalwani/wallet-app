@@ -12,12 +12,8 @@ import { toast } from "react-toastify";
 
 
 export default function SignIn(){
-    console.log("aaaa");
-    console.log(process.env.NEXT_SECRET+"ccc");
     
-    console.log(process.env.NEXT_PUBLIC_SECRET);
-    console.log("bbbb"+process.env.NEXTAUTH_URL);
-    
+ 
     
     const [user,setUser]=useState<{phone:string,password:string}>({phone:"",password:""})
     const router = useRouter()
