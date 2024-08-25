@@ -27,7 +27,9 @@ export default function SignUp(){
     const[isPending,startTransition]=useTransition()
     const auth=getAuth(app)
      console.log(process.env.NEXT_PUBLIC_SECRET+"aaa");
-     console.log("   aaaaaaaaaaaa");
+    
+     console.log(process.env.NEXT_SECRET+"ccc");
+     console.log("bbbb"+process.env.NEXTAUTH_URL);
           
     const loadingIndicator=(<div>
       <div role="status">
