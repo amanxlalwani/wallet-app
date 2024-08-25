@@ -20,7 +20,7 @@ export default function SignUp(){
   const router = useRouter()
   console.log("aaa"+process.env.NEXT_PUBLIC_SECRET);
   console.log("bbbb"+process.env.NEXTAUTH_URL);
-  console.log("ccc"+process.env.HELLO);
+  console.log("ccc"+process.env.NEXT_PUBLIC_HELLO);
     const[otp,setOtp]=useState("")
     const [recaptchaVerifier,setRecaptchaVerifier]=useState<RecaptchaVerifier|null>(null)
     const [resendCountdown,setResendCountdown]=useState(0)
