@@ -16,7 +16,7 @@ jobs:
       run: cp ./docker/Dockerfile.user ./Dockerfile
     
     - name: Prepare env file
-      run: echo 'NEXTAUTH_URL=${{secrets.NEXTAUTH_URL}}' >> ./apps/user-app/.env && echo 'NEXT_PUBLIC_SECRET=${{secrets.NEXT_PUBLIC_SECRET}}' >> ./apps/user-app/.env
+      run: echo 'HELLO=${{secrets.NEXTAUTH_URL}}' >> ./apps/user-app/.env && echo 'NEXT_PUBLIC_SECRET=${{secrets.NEXT_PUBLIC_SECRET}}' >> ./apps/user-app/.env && echo 'HELLO=${{secrets.HELLO}}' >> ./apps/user-app/.env
 
     - name: Log in to Docker Hub
       uses: docker/login-action@v1
