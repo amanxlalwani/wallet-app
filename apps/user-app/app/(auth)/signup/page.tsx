@@ -26,7 +26,7 @@ export default function SignUp(){
     const [user,setUser]=useState<{name:string, phone:string,password:string}>({name:"",phone:"",password:""})
     const[isPending,startTransition]=useTransition()
     const auth=getAuth(app)
-     console.log(resendCountdown+"aaaaaaaaaaaa");
+     console.log(process.env.NEXT_PUBLIC_SECRET+"aaaaaaaaaaaa");
      
     const loadingIndicator=(<div>
       <div role="status">
