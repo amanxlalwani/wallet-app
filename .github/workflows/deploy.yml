@@ -43,7 +43,8 @@ jobs:
         username: ${{ secrets.SSH_USERNAME }}
         key: ${{ secrets.SSH_KEY }}
         script: |
-          sudo docker pull amanlalwani/wallet-app:latest
           sudo docker stop web-app || true
           sudo docker rm web-app || true
-          sudo docker run -d --name web-app -e NEXT_PUBLIC_SECRET='${{secrets.NEXT_PUBLIC_SECRET}}'   -p 3005:3000 amanlalwani/wallet-app:latest
+          sudo docker image remove amanlalwani/wallet-app:latest
+          sudo docker pull amanlalwani/wallet-app:latest
+          sudo docker run -d --name web-app   -p 3005:3000 amanlalwani/wallet-app:latest
