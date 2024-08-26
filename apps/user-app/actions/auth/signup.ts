@@ -26,6 +26,8 @@ export async function signup({user:{name,phone,password}}:{user:{name:string, ph
          }
      }
      catch(e){
+        console.log(e);
+        
          return {
             message:"failure"
          }
