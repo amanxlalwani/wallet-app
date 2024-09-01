@@ -11,7 +11,7 @@ import { ConfirmationResult, getAuth , RecaptchaVerifier, signInWithPhoneNumber 
 
 import { signup } from "../../../actions/auth/signup";
 
-import { app } from "../../lib/firebase/auth";
+import { getFirebaseApp } from "../../lib/firebase/auth";
 import { log } from "console";
 import { toast } from "react-toastify";
 
@@ -27,6 +27,8 @@ export default function SignUp(){
     const [confirmationResult,setConfirmationResult]=useState<ConfirmationResult|null>(null)
     const [user,setUser]=useState<{name:string, phone:string,password:string}>({name:"",phone:"",password:""})
     const[isPending,startTransition]=useTransition()
+
+    const app=getFirebaseApp()
     const auth=getAuth(app)
 
           
