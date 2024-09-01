@@ -8,7 +8,7 @@ export default async function Home() {
 
   if(session?.user)
   {
-    redirect("/dashboard")
+    redirect("/transfer")
   }
   else
   {

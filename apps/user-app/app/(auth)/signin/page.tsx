@@ -3,9 +3,9 @@
 import { Button } from "@repo/ui/button";
 import InputBox from "@repo/ui/inputBox";
 import { log } from "console";
-import { signIn } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 import { redirect, useRouter } from "next/navigation";
-import { useState, useTransition } from "react";
+import { useEffect, useState, useTransition } from "react";
 import { toast } from "react-toastify";
 
 
@@ -18,6 +18,24 @@ export default function SignIn(){
     const [user,setUser]=useState<{phone:string,password:string}>({phone:"",password:""})
     const router = useRouter()
     const [isPending,startTransition]=useTransition()
+    const [loading,setLoading]=useState(true)
+    const session=useSession()
+   
+    useEffect(()=>{
+        console.log(session);
+        
+        if(session.data?.user)
+        {
+        router.push("/transfer")
+        setLoading(false)
+        }
+        
+        if(session.status!='loading'){
+            setLoading(false)
+        }
+    },[session])
+
+
 
     const loadingIndicator=(<div>
         <div role="status">
@@ -28,6 +46,15 @@ export default function SignIn(){
       <span className="sr-only">Loading...</span>
       </div>
       </div>)
+
+      if(loading){
+        return<>
+
+<div className="flex justify-center items-center h-screen">
+{loadingIndicator}
+</div>
+        </>
+      }
 
 
     return <>
@@ -43,12 +70,12 @@ export default function SignIn(){
         {
             startTransition(async ()=>{
                 const res= await signIn("credentials",{phone:user.phone,
-                    password:user.password,callbackUrl:'/dashboard',redirect:false}) 
+                    password:user.password,callbackUrl:'/transfer',redirect:false}) 
                     console.log(res);
                     
                 if(res?.ok){
                 toast.success("Sign In Successful")
-                router.push("/dashboard")
+                router.push("/transfer")
                 }
                 else{
                  toast.error("Invalid Credentials")   
